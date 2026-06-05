@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --aubergine-dark:  #130e1c;
+  --aubergine:       #1c1228;
+  --rose-gold:       #b8906a;
+  --blush:           #dcc0a0;
+  --parchment:       #fdf8f2;
+  --cream:           #f7f0e6;
+  --divider:         #e0ceb8;
+  --text-dark:       #2a1428;
+  --text-mid:        #5a3840;
+  --text-muted:      #8a6858;
+  --text-subtle:     #9a7860;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--parchment);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ornament divider used across pages */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.ornament-line {
+  height: 0.5px;
+  width: 40px;
+  background: #c8a888;
+}
+
+.ornament-diamond {
+  width: 6px;
+  height: 6px;
+  background: var(--rose-gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Section headings */
+.section-heading {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(22px, 4vw, 28px);
+  font-weight: 400;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.section-rule {
+  width: 32px;
+  height: 0.5px;
+  background: var(--rose-gold);
+  margin: 8px auto;
+}
+
+/* Subtle link style */
+a.subtle-link {
+  color: var(--text-subtle);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--divider);
+  padding-bottom: 1px;
+  font-size: 11px;
+  transition: color 0.2s;
+}
+
+a.subtle-link:hover {
+  color: var(--rose-gold);
+}
+
+/* Sold badge overlay */
+.sold-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 10, 20, 0.1);
+  pointer-events: none;
+}
