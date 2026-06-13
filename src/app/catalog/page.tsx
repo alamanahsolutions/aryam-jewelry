@@ -4,7 +4,6 @@ import { useEffect, useState, useMemo } from 'react'
 import Image from 'next/image'
 import { client } from '@/lib/sanity'
 import { allProductsQuery } from '@/lib/queries'
-import { urlFor } from '@/lib/sanity'
 
 const CATEGORIES = ['All', 'Rings', 'Necklaces', 'Bangles', 'Bracelets', 'Bridal Sets', 'Earrings', 'Coins & Bars', 'Silver']
 
@@ -36,7 +35,7 @@ function ProductCard({ product }: { product: Product }) {
       <div style={{ position: 'relative', height: '200px', background: product.available ? '#f0e8dc' : '#e8e0d4' }}>
         {images[imgIndex] && (
           <Image
-            src={urlFor(images[imgIndex]).width(400).height(400).url()}
+            src={images[imgIndex].url}
             alt={images[imgIndex].alt ?? product.name}
             fill
             style={{ objectFit: 'cover' }}
